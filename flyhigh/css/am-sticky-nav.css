@@ -1,0 +1,167 @@
+/* = Sticky Header Settings
+-------------------------------------------------------------------------------------------------------------------- */
+
+
+/**
+ * Main sticky header wrapping code 
+ */
+#am-sticky-header {
+	position:fixed;top:0;left:0;width:100%;/*background:#FFF;*/ 
+	transition: opacity 0.25s ease-in-out 0s;
+	opacity:0;
+	z-index:-1;
+	-webkit-box-shadow: -1px 7px 16px 0px rgba(0,0,0,0.67);
+	-moz-box-shadow: -1px 7px 16px 0px rgba(0,0,0,0.67);
+	box-shadow: -1px 7px 16px 0px rgba(0,0,0,0.67);
+	visibility:hidden;
+	}
+	/* Fade in via CSS */
+	#am-sticky-header.fades { opacity:1; z-index:10000;visibility:visible;}
+	
+
+/* Sticky top when admin-bar is used */
+	.admin-bar #am-sticky-header {top:32px}
+	
+	@media (max-width: 780px) {	 /*  admin bar is taller at 780px */ 
+		.admin-bar #am-sticky-header {top:46px}
+		.am-sticky-toprow {display:none} /* Get rid of the top row at this point */ 
+	}
+	
+	@media (max-width: 600px) { /* admin bar is no longer sticky below 600px, so the sticky is coming back up to the top */
+		.admin-bar #am-sticky-header {top:0}
+	}
+
+
+/**
+ * Top row Styles 
+ */
+.am-sticky-toprow {height:40px; line-height:40px; font-size:20px; overflow:hidden/* background:#777;*/  }
+.am-sticky-toprow .am-sticky-left-info { text-align:left;  }
+.am-sticky-toprow .am-sticky-right-info { text-align:right }
+
+
+/**
+ * Main row Styles. Logo and Main menu 
+ */
+.am-sticky-mainrow {height:80px; line-height:80px;  /*background:#ccc; */}
+.am-sticky-mainrow .am-sticky-logo-img {max-width:100%; max-height:80px;  display:inline-block}
+
+
+/**
+ *  Main menu 
+ */
+
+.am-sticky-mainmenu{margin:0; float:right;  }
+	.am-sticky-mainmenu>li>a{font-size:14px;line-height:80px;padding:0 12px;
+				color:#584535;text-transform: capitalize; font-weight:normal;
+			/*	 background:url(images/structure/nav_divider.jpg) center right no-repeat; */}
+	
+	.am-sticky-mainmenu>li.first>a{padding-left:0}
+	.am-sticky-mainmenu>li.last>a{background:0; padding-right:0}
+	.am-sticky-mainmenu>li:hover>a{/*color:#54583A;*/ text-decoration:none}
+	
+	/* .am-sticky-mainmenu>li:hover {background:url(images/structure/nav_underscore.png) center top}*/	
+	/* .am-sticky-mainmenu>li.has-submenu {background:url(images/structure/nav_sub_menu_arrow.jpg) center 45px no-repeat;} */
+	
+		/* Sub-Menu*/
+		.am-sticky-mainmenu ul{width:200px;margin-top:0}
+		.am-sticky-mainmenu li li a{/*color:#584535;*/font-size:13px; line-height:40px; padding:0 16px;margin:0;/*background:#D8CEBC*/}
+		.am-sticky-mainmenu li ul a:hover{/*color:#D8CEBC;background:#534131*/}
+
+.am-sticky-nav-condenced {text-align:right; font-size:25px; letter-spacing:15px}
+
+.am-sticky-svg {width:32px; height:32px; vertical-align:middle}
+
+@media (max-width: 500px) {
+	.am-sticky-nav-condenced [class*="am-sticky-btn"]{display:none}
+	.am-sticky-nav-condenced .am-sticky-btn-call, .am-sticky-nav-condenced .am-sticky-btn-menu {display:inline}		
+}
+
+
+
+/**
+ * Side panel 
+ */
+.am-sticky-side-panel {
+	position:fixed; top:0; bottom:0; left:0;max-height:100%; width:100%; background:#CCC; padding:0 25px; 
+	z-index:20000; display:none; opacity:.98; overflow:scroll;
+}
+.am-sticky-side-panel.fades {opacity:1; z-index:20000}
+.admin-bar .am-sticky-side-panel {padding-top:60px}
+
+
+#am-sticky-side-panel-logo {margin:0 0 25px}
+.am-sticky-side-panel-logo-img {max-width:100%}
+
+
+
+.am-sticky-side-panel  .sticky-side-panel-lefteditable { text-align:center; font-size:20px; letter-spacing:10px; padding:40px 0}
+.am-sticky-side-panel  .sticky-side-panel-nav {padding:10px 0; text-align:justify; font-size:30px; letter-spacing:10px; display:block}
+.am-sticky-side-panel  .sticky-side-panel-nav a {float:left; width:25%; text-align:center}
+
+
+
+	/* Accordion Style */
+	.am-sticky-nav-container { width:100%; height:100%}
+	.am-sticky-accordion, .am-sticky-accordion ul {  list-style:none outside;  margin: 0;  padding: 0;   overflow:hidden;}
+	.am-sticky-accordion>li>a {
+	 margin:0; cursor: pointer; height:60px; line-height:60px;
+	 font-size:18px; /*color:#534131;*/ display:block;  padding:0;
+	 background:0;border:0;}
+
+	.am-sticky-accordion>li>ul {padding: 0; margin:0 0 40px;/* border-top:1px solid #54583A*/}
+	
+	.am-sticky-accordion ul li a{display:block; text-decoration:none; /*color: #000;*/
+	font-weight:normal; height:40px; line-height:40px; 
+	border-bottom:1px solid #ccc;}
+	.am-sticky-accordion ul li a:hover {/*color: #b4bccc;*/text-decoration:none; }	
+	
+		/* Mobile Submenu */
+		.am-sticky-accordion>li>ul>li a {/*background:0; color:#534131;*/ padding-left:20px}
+		
+		/* .am-sticky-accordion>li>ul>li a:hover {color:#293800;} */
+
+		.am-sticky-accordion>li>ul>li li a {padding-left:30px}
+		.am-sticky-accordion>li>ul>li li li a {padding-left:40px }
+		.am-sticky-accordion>li>ul>li li li li a {padding-left:50px}				
+		
+		
+/*		.am-sticky-accordion>li>ul>li li a { background:#D2C7B2}		
+		.am-sticky-accordion>li>ul>li li li a {background:#BBAA8B }
+		.am-sticky-accordion>li>ul>li li li li a {background:#9A845B}		*/
+
+		/* If a menu item has an dropdown */
+		.am-sticky-accordion .menu-item-has-children>a:after{
+		  content:"\e252";  font-family:"Glyphicons Halflings";
+		  margin:0 10px 0 0; display:inline-block; float:right; font-size:10px;	}
+
+
+
+/* Styles */
+		.am-sticky-toprow {background: #777777} 
+		.am-sticky-mainrow {background: #CCCCCC}
+		
+		/* Menu Items */ 
+		.am-sticky-mainmenu > li > a {color: #052F4D} 
+		.am-sticky-mainmenu > li > a:hover {color: #009CDE} 
+		
+		/* Submenu */
+		.am-sticky-mainmenu li li a {background: #777} 
+		.am-sticky-mainmenu li li a:hover {background: #333} 
+		.am-sticky-mainmenu li li a {color: #FFF} 
+		.am-sticky-mainmenu li li a:hover {color: #AAA} 
+		
+		/* Accodion Menu */ 
+		.am-sticky-accordion > li > a {color: #052F4D} 
+		.am-sticky-accordion > li > a:hover {color: #009CDE} 
+		
+		/* Sub menu */
+		.am-sticky-accordion > li li a {background: #777} 
+		.am-sticky-accordion > li li a:hover {background: #333} 
+		.am-sticky-accordion > li li a {color: #052F4D} 
+		.am-sticky-accordion > li li a:hover {color: #AAA} 
+		
+		/* Side panel */
+		.am-sticky-side-panel {background: #CCCCCC} 
+		.am-sticky-iconsnav a {color: #009CDE} 
+		.am-sticky-iconsnav a:hover {color: #FFF} 

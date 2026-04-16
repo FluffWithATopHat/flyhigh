@@ -1,0 +1,41 @@
+
+.am-social-svg {width:24px; height:24px; vertical-align:middle}
+
+
+/* Default Shapes */
+.am-social-svg .svg-cirlcle { display:block}
+.am-social-svg .svg-square { display:none}
+.am-social-svg .svg-rounded-square { display:none}
+
+/* Icon color */
+.am-social-svg .svg-icon { fill:#fff}
+
+
+
+/* Default colors */ 
+.am-social-facebook {fill:#3B5997}
+.am-social-twitter {fill:#2CA9E1}
+.am-social-google {fill:#DD4B39}
+.am-social-youtube {fill:#BE2D28}
+.am-social-angieslist {fill:#75AE43}
+.am-social-linkedin {fill:#007AB9}
+.am-social-snapchat {fill:#F7E821}
+
+.am-social-yelp {fill:#FF0000}
+.am-social-foursquare {fill:#09B9DF}
+.am-social-demandforce {fill:#154778}
+.am-social-healthgrades {fill:#6A84AA}
+.am-social-pinterest {fill:#D73532}
+
+.am-social-rss {fill:#F57C14}
+.am-social-zocdoc {fill:#2589A1}
+.am-social-realself {fill:#3A97B7}
+
+
+
+
+
+/*.am-social-instagram {fill:#89634A}*/
+.am-social-instagram {
+	fill: #983FA3;
+}

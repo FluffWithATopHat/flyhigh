@@ -1,0 +1,1138 @@
+/**
+ * Theme Name: Fly High Adventure Parks
+ * Theme URI: http://mednet-tech.com
+ * Author: MedNet Technologies
+ * Author URI: http://mednet-tech.com
+ * Description: Custom HTML5 Pruduction Wordpress Theme Using thmpltfrmwrk
+ * Template: thmpltfrmwrk 
+ * Version: 1 
+ */
+
+
+
+/* = Formatting
+-------------------------------------------------------------------------------------------------------------------- 
+Global Styling For All Elements throughout the site 
+** Advice Media ** */
+
+:root {
+ --flyhigh-green: #6cc24a;
+ --flyhigh-blue: #0090da;
+ --flyhigh-hotpink: #FF69B4;
+}
+
+html {background:#ffffff;}
+
+body { color:#000; font-size:17px; line-height:30px}
+
+h1, h2, h3, h4, h5, h6 { margin:60px 0; padding:0; color:#444; font-weight:normal; }
+
+	H1{font-size:50px;line-height:56px; color:#222}
+	H2{font-size:44px;line-height:44px; color:var(--flyhigh-blue); margin-bottom:40px;}
+	H3{font-size:30px;line-height:40px; margin-bottom:30px;}
+	H4{font-size:26px;line-height:36px; margin-bottom:30px;}
+	H5{font-size:24px;line-height:34px; margin-bottom:20px;}
+	H6{font-size:22px;line-height:32px; margin-bottom:10px;}
+	
+	.topheader {margin:0 0 60px;}
+	.home h2.topheader { font-size:60px; color:#222222; line-height:62px; font-weight:500; text-transform:uppercase; padding:0 0 37px 0; margin:0; position:relative; }
+	.home h2.topheader .color{ color:var(--flyhigh-green); }
+	.home h2.topheader .brack{ display:block; }
+	.home h2.topheader:after{ content:""; width:377px; max-width:100%; height:4px; position:absolute; left:0; bottom:0; background:var(--flyhigh-green); }
+	
+	@media screen and (max-width: 1199px) {
+		.home h2.topheader{ font-size:53px; line-height:55px; }
+	}
+
+	@media screen and (max-width: 991px) {
+		.home h2.topheader{ padding:0 0 15px; }
+	}
+
+	@media screen and (max-width: 767px) {
+		
+		H1,H2,H3,H4,H5,H6{margin:40px 0 10px;}
+		H1{font-size:36px;line-height:34px}
+		H2{font-size:34px;line-height:30px}
+		H3{font-size:32px;line-height:28px}
+		H4{font-size:30px;line-height:26px}
+		H5{font-size:28px;line-height:24px}
+		H6{font-size:26px;line-height:22px}
+		.topheader {margin:0px 0 30px 0;}		
+		.home h2.topheader{ font-size:40px; line-height:42px; }
+	}
+	@media screen and (max-width: 500px) {
+		.home h2.topheader .brack{ display:inline; }
+	}
+	
+ul, ol{ padding:0 0 0 16px; margin:0 0 40px; list-style:outside;}
+	ul.indent, ol.indent { padding-left:30px}
+	
+ul.expand li {padding-bottom:15px;}
+
+p+ul {margin-top:-20px;}
+
+ol {list-style:decimal;}	
+
+ul.pdf {list-style-image:url(../images/page_white_acrobat.png); margin-left:10px;}
+
+	/* Fontawesome Icon Support */
+	ul.faul, ol.faul { list-style:none;}
+	.faul li {font-family:FontAwesome;position:relative}
+	.faul li:before { left:-18px;font-size:11px;position: absolute; color:#DE0846}	
+
+
+a {color:var(--flyhigh-blue); text-decoration:none}
+	a:hover {color: var(--flyhigh-green); text-decoration:none}
+
+	/* take off the dotted outline on this elements */
+	a:hover, a:active, a:focus, object, embed {
+	  outline: 0; text-decoration:none;
+	}
+
+
+hr {text-align: center;border:0;clear:both;margin:40px auto;border-top:1px solid #777;color:#DE0846}
+	hr.clear { border: 0 none;height: 1px;margin: 0; clear:both}
+	hr.spacer {border: 0 none;height: 40px;margin: 0}
+	hr.spacer.short {height: 20px}	
+	hr.spacer.long {height: 80px}
+	hr.centered {max-width:400px}
+	
+	/* hr.left {max-width:150px; margin-left:0} */
+
+
+	
+
+
+	
+
+
+	/* all headers followed by an HR get their margins redone */ 
+	hr + .htag {margin-top: 40px; }
+
+	hr[class*="fa-"]::before {
+    display: inline-block;font-family:FontAwesome;position:relative;padding:0 10px;top:-14px;background:#FFF;font-size:18px}
+
+/* fancy lines before/after an element */
+.linetop::before{content:' ';display:block;margin:0 0 20px;max-width:150px;border-top:1px solid #777}	
+.linebottom::after{content:' ';display:block;max-width:150px;border-top:1px solid #777}
+
+
+p, .rowlikep {margin:0 0 40px}
+
+/* Block Quote styling */
+blockquote {border-left:10px solid #ee5831;padding:0 32px; margin:0 0 40px}
+
+	blockquote cite {display:block; margin:20px 0 0; color:#db1249; font-style:normal}
+
+	blockquote.large {font-size:60px; line-height:60px}
+	blockquote.large cite {font-size:18px; line-height:18px}
+
+	/* enable styled quote */	
+	blockquote.quoted {border:0;position:relative; padding:0 0 0 70px} 
+	blockquote.quoted::before {display:block;content:open-quote;position:absolute;font-size:160px;left:0;top:30px;color:#ee5831;}
+
+/* -- Formatting classes -- */
+.row.flushcolumns > * { padding:0}	
+.img-thumbnail { background-color: #f7f7f7; border: 2px solid #333; border-radius:1px}
+
+
+/* Buttons  */
+.btn.btnc, .btn.btnc::before { font-size:16px; color:#222222; line-height:18px; font-weight:700; text-transform:uppercase; letter-spacing:1.6px; padding:20.5px 28px; text-decoration:none; border:0; border-radius:30px; cursor:pointer; background:var(--flyhigh-green); outline:none; white-space:normal; }
+.btn.btnc:hover { background:#76a525; color:#222222; text-decoration:none; }
+	
+
+/* Misc accents */
+.left-border { border-left: 1px solid #d2d2d2;}
+.emphasisbox { padding:40px;background:#efefef}
+.emphasisbox .htag {color:#db1249}
+
+
+/* accordion styling */
+.tpf-ac-trigger {cursor:pointer; position:relative; padding-left:25px; margin:0 0 20px}
+.tpf-ac-trigger::before {   
+    position: absolute;
+    top:35%;left:0;
+    content: "";display: block;
+    width: 0.4em; height: 0.4em;
+    transform: rotate(45deg);	
+    border-right: 0.2em solid #DE0846;
+    border-top: 0.2em solid #DE0846;
+	}
+	
+.tpf-ac-trigger.tpf-active::before {transform: rotate(135deg)}
+
+
+/* Tabs Styling */
+.nav-tabs.tabsc {border-bottom:2px solid #ee5831}
+.nav-tabs.tabsc a { padding: 10px 20px;border-radius:0; background:#2d2b2a; color:#FFF }
+.nav-tabs.tabsc .dropdown-menu {background:#2d2b2a}
+.nav-tabs.tabsc .dropdown-menu .divider {background:#ee5831;}
+.nav-tabs.tabsc >.active >a,
+.nav-tabs.tabsc >li >a:focus,
+.nav-tabs.tabsc >li >a:hover {background:#ee5831; color:#FFF}
+.tab-content.tabsc {	background:#EFEFEF; padding:20px}
+
+/* Table Styling */	
+.table.tablec tr th  {background:#ee5831; color:#FFF}
+.table.tablec tr th:nth-of-type(even) {background:#eb2842}
+.table.tablec tr:nth-of-type(odd) {background-color: #efefef}
+.table.tablec tr:nth-of-type(odd) td:nth-of-type(even) {background-color: #e7e7e7}
+.table.tablec tr:nth-of-type(even) {background-color: #f9f9f9}
+.table.tablec tr:nth-of-type(even) td:nth-of-type(even) {background-color: #f0f0f0}
+	
+
+
+/* = Topbar
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#topbar {background:#222222; padding:7px 10px 8px;}
+#topbar address{ display:inline-block; font-size:16px; color:#fff; line-height:18px; font-weight:400; padding:8px 20px 0 0; margin:0; vertical-align:top; }
+#topbar address span{ display:inline-block; color:var(--flyhigh-green); font-weight:600; text-transform:uppercase; letter-spacing:1.6px; padding:0 0 0 6px; }
+#topbar .link{ display:inline-block; padding:0; margin:0; vertical-align:top; }
+#topbar .link a{ display:inline-block; font-size:14px; color:#fff; line-height:22px; font-weight:600; text-transform:uppercase; letter-spacing:1.6px; padding:6px 20px 6px 18px; margin:0; background:#555555; border-radius:20px; }
+#topbar .link a span{ display:inline-block; font-size:20px; color:var(--flyhigh-green); padding:0 5px 0 0; vertical-align:middle; }
+#topbar .link a:hover{ color:var(--flyhigh-green); }
+
+@media screen and (max-width: 767px) {
+	#topbar address{ display:block; padding:0 0 8px 0; }
+	#topbar .link{ display:block; }
+}
+@media screen and (max-width: 401px) {
+	#topbar address{ font-size:13px; }
+	#topbar .link a{ font-size:13px; letter-spacing:.3px; }
+}
+
+/* = Header
+-------------------------------------------------------------------------------------------------------------------- 
+Elements in the structure/header.php file  
+** Advice Media ** */
+#header{ background:#fff; }
+#header #logo{ padding:0; margin:3px 0 0 0; }
+#header #logo img { max-width:100%; }
+#header .topright{ padding:28px 0 7px; }
+#header .topright .social{ padding:0; margin:0; line-height:0; }
+#header .topright .social a{ display:inline-block; padding:0; margin:0 3px; }
+#header .topright .social a:first-child{ margin-left:0; }
+#header .topright .social a:last-child{ margin-right:0; }
+
+@media screen and (max-width: 991px) {
+	#header #logo{ margin:10px 0 0 0; }
+	#header .topright{ padding:20px 0 10px; }
+}
+
+
+/* = Announcement
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#announcement{ padding:10px 0 6px; margin:0; background:var(--flyhigh-blue); }
+#announcement h3{ font-size:42px; color:#fff; line-height:44px; font-weight:500; text-transform:uppercase; padding:0; margin:0; }
+
+#announcement h3 a {color:#222;}
+#announcement h3 a:hover{color:var(--flyhigh-green);}
+
+@media screen and (max-width: 991px) {
+	#announcement h3{ font-size:32px; line-height:34px; }
+}
+@media screen and (max-width: 600px) {
+	#announcement h3{ font-size:25px; line-height:27px; }
+}
+
+/* = Main Navigation 
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#navigation { background:var(--flyhigh-green); border-bottom:0; overflow: visible }
+
+	/* Dropdown Style */
+	#mainmenu{margin:0; float:right;}
+	#mainmenu>li{ padding:0; margin:0 24px; }
+	#mainmenu>li.first, #mainmenu>li:first-child{ margin-left:0 }
+	#mainmenu>li.last, #mainmenu>li:last-child{ background:0; margin-right:0 }
+	#mainmenu>li>a{ font-size:24px; color:#222222; line-height:26px; font-weight:400; text-transform:uppercase; letter-spacing:.8px; padding:0 0 26px 0; 
+			/*	 background:url(images/structure/nav_divider.jpg) center right no-repeat; */}
+	#mainmenu>li:hover>a{ color:var(--flyhigh-green); text-decoration:none; }
+	
+	/* #mainmenu>li:hover {background:url(images/structure/nav_underscore.png) center top}*/	
+	/* #mainmenu>li.has-submenu {background:url(images/structure/nav_sub_menu_arrow.jpg) center 45px no-repeat;} */
+	
+		/* Sub-Menu*/
+		#mainmenu ul{width:200px;margin-top:0}
+		#mainmenu li li a{ color:#333; font-size:22px; padding:10px 16px; margin:0; background:var(--flyhigh-green); line-height:22px;}
+		#mainmenu li ul a:hover{ color:#fff; background:#7ba92c; }
+
+
+	/* Accordion Style */
+	#mainmenu_accordion, #mainmenu_accordion ul {list-style:none outside;  margin: 0;  padding: 0;   overflow:hidden;}
+	#mainmenu_accordion>li>a {
+	 margin:0; cursor: pointer; height:60px; line-height:60px;
+	 font-size:18px; color:#fff; display:block;  padding:0;
+	 background:0;border:0;}
+
+	#mainmenu_accordion>li>ul {padding: 0; margin:0 0 40px; /*border-top:1px solid #54583A;*/}
+	
+	#mainmenu_accordion ul li a{display:block; text-decoration:none; font-weight:normal; border-bottom:1px solid rgba(255,255,255,.3);
+								/*height:40px; line-height:40px;*/ height:auto; font-size:22px; line-height:16px; text-transform:uppercase; padding-top:10px!important; padding-bottom:10px!important;}
+	#mainmenu_accordion ul li a:hover {text-decoration:none; }	
+	
+		/* Mobile Submenu */
+		#mainmenu_accordion>li>ul>li a { background:0; color:#fff; padding-left:20px}		
+		#mainmenu_accordion>li>ul>li a:hover {color:#231f20;}
+		
+		#mainmenu_accordion>li>ul>li li a { padding:0 0 0 40px;}		
+		#mainmenu_accordion>li>ul>li li li a {background:#fff; padding:0 0 0 50px;}
+		#mainmenu_accordion>li>ul>li li li li a {background:#fff; padding:0 0 0 60px;}		
+
+		/* If a menu item has an dropdown */
+		#mainmenu_accordion .menu-item-has-children>a:after{
+		  content:"\e252";  font-family:"Glyphicons Halflings";
+		  margin:0 10px 0 0; display:inline-block; float:right; font-size:10px;}
+
+
+/* = Sticky Header
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+.am-sticky-toprow{ background:#222;}
+.am-sticky-toprow a{ font-size:16px; color:#fff; font-weight:400; padding:0; margin:0; }
+.am-sticky-toprow a:hover{ color:var(--flyhigh-green); }
+.am-sticky-toprow .phone{ display:inline-block; padding:0; margin:0; color:#fff;}
+.am-sticky-toprow address{ display:inline-block; padding:0 0 0 20px; margin:0; }
+.am-sticky-toprow .am_social_follow_pack{ display:inline-block; padding:5px 0 0 0; margin:0; line-height:0; vertical-align:top; }
+
+.am-sticky-mainrow{ background:#fff; }
+.am-sticky-mainmenu > li{ margin:0 10px; }
+.am-sticky-mainmenu > li.first{ margin-left:0; }
+.am-sticky-mainmenu > li.last{ margin-right:0; }
+
+
+.am-sticky-mainmenu > li > a{ font-size:22px; color:#222; text-transform:uppercase; letter-spacing:.8px; padding:0; }
+
+
+.am-sticky-mainmenu > li > a:hover{ color:var(--flyhigh-green); }
+
+.am-sticky-mainmenu li li a{ color:#222; background:var(--flyhigh-green);font-size:16px; line-height:20px; padding-top:10px; padding-bottom:10px;}
+
+.am-sticky-mainmenu li li a:hover{ color:#fff; background:#7ba92c; }
+
+
+.am-sticky-iconsnav a{ color:var(--flyhigh-green); }
+.am-sticky-iconsnav a:hover{ color:#74a225; }
+
+.am-sticky-side-panel{ background:#fff; }
+.am-sticky-side-panel .sticky-side-panel-logo{ text-align:center; line-height:0; padding:30px 0; }
+.am-sticky-side-panel .sticky-side-panel-lefteditable{ padding:40px 0 0 0; }
+.am-sticky-side-panel hr{ border-color:#eaeaea; }
+
+.am-sticky-accordion > li > a{ height:50px; color:#222; line-height:50px; border-bottom:1px solid #eaeaea; }
+.am-sticky-accordion > li > a:hover{ color:var(--flyhigh-green); }
+.am-sticky-accordion ul li a{ border-bottom:1px solid #eaeaea; padding-bottom:10px; }
+.am-sticky-accordion > li li a{ color:#222; background:none; }
+
+
+
+.am-sticky-accordion > li li a:hover{ color:var(--flyhigh-green); background:none; }
+.am-sticky-accordion > li > ul{ margin:0; }
+
+.am-sticky-mainrow .am-sticky-logo-img{ max-height:50px;}
+.am-sticky-accordion > li > ul{ margin:0; }
+
+
+.am-sticky-accordion ul li a {height:auto; line-height:20px; padding-top:10px; }
+
+
+
+
+/* = Banner/Graphic - Carousel
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#banner{ padding:0; margin:0; position:relative; }
+#graphic {background:0;}
+#graphic .container {padding:0;}
+.carousel-inner {width:100%; margin:0 auto;}
+
+.carousel-inner > .item > img.fullwidthimg {max-width:100%; width:100%; height:auto}
+.carousel-inner > .item > .constrained { height:420px; background-size:cover!important;}
+.carousel-inner > .item {background:#fff}
+@media screen and (max-width: 1550px) {
+	.carousel-inner > .item > img.fullwidthimg{ width:auto; max-width:130%; }
+}
+@media screen and (max-width: 1199px) {
+	.carousel-inner > .item > img.fullwidthimg{ width:auto; max-width:150%; }
+}
+@media screen and (max-width: 414px) {
+	.carousel-inner > .item > img.fullwidthimg{ width:auto; max-width:100%; }
+}
+
+
+/*Img was floating left causing issues with caption box*/
+#graphic .wp-post-image {float:none;}
+
+
+
+/* -- CAPTION -- */
+.carousel-caption {width:100%; top:30%; right:0; left:0; bottom:0; text-align:left; padding:0; /*max-width:1280px; display:block; margin:0 auto;*/}
+.carousel-caption > * {color:#572600; text-shadow:none;}
+.carousel-caption .title {color:#000; font-size:40px; line-height:45px; margin:0 0 20px 0; text-transform:uppercase;}
+.carousel-caption p {font-size:18px; line-height:28px; margin:0;}
+
+@media screen and (max-width: 991px) {
+	.carousel-caption { display:none; position:relative; text-align:center; padding:20px 20px 40px; background:#000;}
+	.carousel-caption .title {font-size:30px; line-height:30px;}
+	.carousel-caption p {font-size:16px; line-height:24px;}
+}
+@media screen and (max-width: 767px) {
+	.carousel-caption .title {font-size:28px; line-height:32px;}
+	.carousel-caption p {font-size:14px; line-height:24px;}
+}
+
+
+/* -- INDICATORS -- */
+.carousel-indicators li { width:14px; height:14px; border-radius:50%; background:#fff; margin:3px 4px; }
+.carousel-indicators li.active { width:20px; height:20px; border:3px solid rgba(255,255,255,1); border-radius:50%; background:var(--flyhigh-green); margin:0 4px; }
+ol.carousel-indicators {margin-bottom:0; line-height:0; }
+
+#graphic ol.carousel-indicators{ width:1280px; left:0; right:0; bottom:40px; padding:0 25px; margin:0 auto; text-align:left; }
+
+
+/* -- LEFT/RIGHT FADE -- */
+/*  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x) */
+.carousel-fade .carousel-inner .item {
+	opacity: 0;  transition-property: opacity;  transition-duration: .75s;
+}
+.carousel-fade .carousel-inner .active {
+	opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+	left: 0;  opacity: 0;  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+	opacity: 1;
+}
+.carousel-fade .carousel-control {
+ 	z-index: 100;
+}
+
+
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0);
+    }
+}
+
+
+/* = Banner Text
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+.banner-cont{ width:100%; height:100%; position:absolute; left:0; bottom:0; padding:0; }
+.banner-cont:before{ content:""; width:198px; height:100%; position:absolute; right:45%; top:0; background:url(../images/banner-text-bg.png) no-repeat center bottom; z-index:999; background-size:100% 100%; }
+.banner-cont:after{ content:""; width:45%; height:100%; position:absolute; right:0; top:0; background:rgba(0,0,0,.8); z-index:999; }
+.banner-cont .text-block{ float:right; width:375px; max-width:100%; padding:95px 0 0 0; margin:0; position:relative; z-index:9999; }
+.banner-cont .text-block h1{ font-size:30px; color:#fff; line-height:32px; font-weight:500; text-transform:uppercase; padding:0 0 15px 0; margin:0 0 28px 0; border-bottom:4px solid #555555; }
+.banner-cont .text-block h1 span{ display:block; font-size:72px; color:var(--flyhigh-green); line-height:66px; }
+.banner-cont .text-block .icon{ display:inline-block; width:30px; font-size:18px; color:var(--flyhigh-green); }
+.banner-cont .text-block address a { font-size:16px; color:#fff; line-height:18px; font-weight:400; padding:0 0 20px 0; margin:0; }
+
+.banner-cont .text-block address a:hover {color:var(--flyhigh-green);}
+
+
+
+.banner-cont .text-block address .gap{ display:inline-block; padding:0 0 0 5px; }
+.banner-cont .text-block .phone{ padding:0 0 20px 0; margin:0; }
+.banner-cont .text-block .phone { font-size:16px; color:#fff!important; line-height:18px; font-weight:400; }
+
+.banner-cont .text-block .phone a { color:#fff; }
+.banner-cont .text-block .phone a:hover{ color:var(--flyhigh-green); }
+
+.banner-cont .text-block .time{ font-size:16px; color:#fff; line-height:18px; font-weight:400; padding:0 0 49px 0; margin:0; }
+
+.banner-cont .text-block .time a {color:#fff;}
+.banner-cont .text-block .time a:hover {color:var(--flyhigh-green);}
+
+
+.banner-cont .text-block .btn.btnc{ display:block; float:left; font-size:14px; padding:15.5px 28px; margin:0 10px 10px 0; }
+.banner-cont .text-block .btn.btnc:nth-child(2n){ margin-right:0; }
+.banner-cont .text-block .btn.btnc:hover{ color:var(--flyhigh-green); background:#fff; }
+
+@media screen and (max-width: 2000px) {
+	.banner-cont:before{ right:40%; }
+	.banner-cont:after{ width:40%; }
+}
+
+@media screen and (max-width: 1700px) {
+	.banner-cont:before{ right:37%; }
+	.banner-cont:after{ width:37%; }
+	.banner-cont .text-block{ padding:65px 0 0; }
+}
+
+@media screen and (max-width: 1199px) {
+	.banner-cont:before{ right:44%; }
+	.banner-cont:after{ width:44%; }
+	.banner-cont .text-block{ padding:35px 0 0; }
+}
+
+@media screen and (max-width: 991px) {
+	.banner-cont{ background:#333333; position:relative; height:auto; margin:-2px 0 0 0; }
+	.banner-cont:before{ display:none; }
+	.banner-cont:after{ display:none; }
+	.banner-cont .text-block{ float:left; padding:35px 0; }
+	.banner-cont .text-block .time{ padding:0 0 30px; }
+}
+
+@media screen and (max-width: 400px) {
+	.banner-cont .text-block .icon{ width:20px; }
+	.banner-cont .text-block address{ font-size:14px; }
+	.banner-cont .text-block address .gap{ padding:0 0 0 5px; }
+}
+
+
+
+/* = Highlights
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#highlights { background: #4c85c5; padding:90px 0; color:#FFF }
+#highlights h1, #highlights h2, #highlights h3, 
+#highlights h4, #highlights h5, #highlights h6 { color:#FFF }
+
+.highlight { display:block;text-align:center;padding:20px;min-height:90px;background:#db1249;color:#FFF;font-size:25px;}
+.highlight {
+	background: #ee5831;
+	background: -moz-linear-gradient(left, #ee5831 0%, #db1249 100%);
+	background: -webkit-linear-gradient(left, #ee5831 0%,#db1249 100%);
+	background: linear-gradient(to right, #ee5831 0%,#db1249 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee5831', endColorstr='#db1249',GradientType=1 );
+}
+.highlight a {color:#FFF}
+
+
+/* = Main Section 
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+#main { background: #fff; padding:60px 0;}
+.home #main{ padding:93px 0 0; }
+.home #main h2.topheader{ margin:0 0 40px 0; }
+.home #main p{ font-size:20px; color:#222222; line-height:32px; font-weight:400; padding:0 0 42px 0; margin:0; }
+.home #main p strong{ text-transform:uppercase; }
+.home #main p span{ color:var(--flyhigh-green); font-weight:700; text-transform:uppercase; }
+.home #main hr{ width:100%; height:1px; padding:0; margin:0; border:none; background:#dddddd; }
+
+@media screen and (max-width: 991px) {
+	.home #main{ padding:60px 0 0; }
+	.home #main h2.topheader{ margin:0 0 20px 0; }
+}
+
+
+/* Hide the breadcrumbs on the homepage */
+.home #main #breadcrumbs {display:none;}
+#main #breadcrumbs {color:#222}
+#main #breadcrumbs a {color:var(--flyhigh-blue)}
+#main #breadcrumbs a:hover {color:var(--flyhigh-green);}
+
+
+#main #breadcrumbs {margin-bottom:10px!important; padding-bottom:0!important;}	
+
+
+	
+.nosidebar #main .main_section {width:100%;}
+
+.main_aside .first {margin-top:0}
+.main_aside .first .htag {margin:0 0 60px}
+
+/* Adjust addthis tool box when after the H1 header */
+/*h1.topheader + .addthis_toolbox {margin:-45px 0 60px}*/
+
+
+/* = Attractions Activities
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#attractions-activities{ padding:70px 0 100px 0; margin:0; }
+#attractions-activities .tpf-latest-post{ padding-top:17px; }
+#attractions-activities .tpf-latest-post .result_data{ display:none; }
+#attractions-activities .tpf-latest-post-item{ padding-bottom:17px; }
+#attractions-activities .tpf-latest-post-item .post_image{ float:left; padding:0; margin:0; }
+#attractions-activities .tpf-latest-post-item .post_image img{ margin:0; }
+#attractions-activities .tpf-latest-post-item .box{ float:right; width:84%; padding:15px 0 35px 0; margin:0; border-bottom:1px solid #dddddd; }
+#attractions-activities .tpf-latest-post-item h3{ font-size:48px; color:#000; line-height:50px; font-weight:500; text-transform:uppercase; padding:0 0 5px 0; margin:0; }
+#attractions-activities .tpf-latest-post-item h3 a{ color:#000; }
+#attractions-activities .tpf-latest-post-item h3 a:hover{ color:var(--flyhigh-green); }
+#attractions-activities .tpf-latest-post-item .tpf-excerpt{ display:block; font-size:16px; color:#222222; line-height:18px; font-weight:400; padding:0; margin:-10px 0 0 0; }
+#attractions-activities .tpf-latest-post-item:last-child .box{ border-bottom:none; }
+#attractions-activities .img-block{ padding:0; margin:0; line-height:0; }
+#attractions-activities .img-block img{ width:auto; max-width:100%; height:auto; }
+#attractions-activities .link{ float:right; width:84%; }
+
+@media screen and (max-width: 1279px) {
+	#attractions-activities .tpf-latest-post-item .box{ width:82%; }
+	#attractions-activities .link{ width:82%; }
+}
+@media screen and (max-width: 1199px) {
+	#attractions-activities .tpf-latest-post-item .box{ width:79%; }
+	#attractions-activities .tpf-latest-post-item h3{ font-size:35px; line-height:37px; }
+	#attractions-activities .link{ width:79%; }
+}
+@media screen and (max-width: 991px) {
+	#attractions-activities{ padding:40px 0 60px; }
+	#attractions-activities .tpf-latest-post-item .box{ width:81%; }
+	#attractions-activities .link{ width:81%; }
+	#attractions-activities .img-block{ text-align:center; padding:30px 0 0 0; }
+}
+@media screen and (max-width: 767px) {
+	#attractions-activities .tpf-latest-post-item .post_image{ float:none; width:100px; margin:0 auto; }
+	#attractions-activities .tpf-latest-post-item .box{ float:none; width:100%; text-align:center; clear:both; }
+	#attractions-activities .link{ float:none; width:100%; text-align:center; }
+}
+@media screen and (max-width: 767px) {
+	#attractions-activities .tpf-latest-post-item h3{ font-size:26px; line-height:28px; }
+}
+
+
+
+#attractions-activities H2 {text-transform:uppercase; color:#222;
+font-size: 48px;
+line-height:50px;
+font-weight:500;
+margin-bottom:0; 
+padding-bottom:5px;
+margin-top:15px; 
+padding-top:0;}
+#attractions-activities H2:hover {color:var(--flyhigh-green);}
+#attractions-activities p {border-bottom:1px solid #ccc;padding-bottom:30px;}
+
+@media screen and (max-width: 991px) {
+	#attractions-activities H2 {text-align:center;}
+	#attractions-activities p {text-align:center;}
+}
+
+
+
+
+/* = Locations
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#locations{ padding:93px 0 100px 0; margin:0; }
+#locations h2.topheader{ margin:0 0 30px 0; }
+#locations h2.topheader .color{ color:#fff; }
+#locations h2.topheader:after{ background:#fff; }
+#locations .location-block{ float:right; width:70%; padding:0; margin:0; }
+#locations .btn.btnc{ background:#fff; margin:0 30px 0 0; }
+#locations .btn.btnc:hover{ background:var(--flyhigh-green); }
+#locations .another-loc{ display:inline-block; font-size:16px; color:#fff; line-height:18px; font-weight:700; text-transform:uppercase; letter-spacing:1.6px; padding:0; margin:21px 0 0 0; }
+#locations .another-loc:hover{ color:var(--flyhigh-green); }
+
+@media screen and (max-width: 991px) {
+	#locations{ padding:60px 0; }
+	#locations .location-block{ float:none; width:100%; }
+}
+@media screen and (max-width: 700px) {
+	#locations .btn.btnc{ margin:0; }
+}
+
+
+/* = Events
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#events{ padding:63px 0 105px 0; margin:0; }
+#events .img-block{ padding:0; margin:0; line-height:0; }
+#events .img-block img{ width:auto; max-width:100%; height:auto; }
+#events .col-md-7{ padding-top:27px; }
+#events h2.topheader{ margin:0 0 20px 0; }
+#events h3{ font-size:48px; color:#222222; line-height:50px; font-weight:500; text-transform:uppercase; padding:0; margin:0; }
+#events h3 a{ color:#222222; }
+#events h3 a:hover{ color:var(--flyhigh-green); }
+#events .tpf-excerpt{ display:none; }
+#events .result_data{ width:377px; max-width:100%; padding:0 0 27px 0; margin:-7px 0 0 0; line-height:0; border-bottom:1px solid #dddddd; }
+#events .tpf-latest-post-item:last-child .result_data{ border-bottom:none; }
+#events .result_data li.date{ font-size:16px; color:#222222; line-height:18px; font-weight:400; padding:0; margin:0; }
+#events .result_data li.date strong{ display:none; }
+#events .result_data li.author{ display:none; }
+#events .tpf-latest-post-item{ padding-top:24px; }
+#events .btn.btnc{ margin:23px 0 0 0; }
+
+@media screen and (max-width: 1199px) {
+	#events h3{ font-size:35px; line-height:37px; }
+}
+@media screen and (max-width: 991px) {
+	#events{ padding:60px 0; }
+	#events .col-md-7{ padding-top:0; }
+	#events .img-block{ text-align:center; padding:30px 0 0 0; }
+}
+
+
+/* = Social Icons
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#social-icons{ padding:94px 0 95px 0; margin:0; background:var(--flyhigh-green); }
+#social-icons h3{ float:left; font-size:48px; color:#fff; line-height:50px; font-weight:500; text-transform:uppercase; padding:0; margin:0; }
+#social-icons .social{ float:right; padding:0; margin:-8px 0 0 0; line-height:0; }
+#social-icons .social a{ display:inline-block; padding:0; margin:0 4px; }
+#social-icons .social a:first-child{ margin-left:0; }
+#social-icons .social a:last-child{ margin-right:0; }
+
+@media screen and (max-width: 991px) {
+	#social-icons{ padding:40px 0; }
+	#social-icons h3{ float:none; font-size:38px; line-height:40px; text-align:center; padding:0 0 10px 0; }
+	#social-icons .social{ float:none; width:100%; margin:0; }
+}
+
+
+
+/* = Doctor 
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#hpdoc {background:#FFF; padding:90px 0;}
+
+
+/* = Quick Contact
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+#quickcontact { padding:90px 0; color:#FFF}
+#quickcontact h1, #quickcontact h2, #quickcontact h3, 
+#quickcontact h4, #quickcontact h5,  #quickcontact h6 { color :#FFF } 
+
+
+/* = Bottom Section|s 
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+#bottomlocations {background:#FFF; padding:90px 0; font-size:16px}
+	#bottomlocations  strong {color:#4c85c5; font-size:24px; font-weight:normal}
+	#bottomlocations .mapimg {height:185px; margin:0}
+	#bottomlocations img {display:block}
+	#bottomlocations .flushcolumns {line-height:10px; margin:0 0 30px}
+
+#associations {padding:40px 0; background:#F3F3F3}
+
+
+#bottom1 {background:#ffffff; padding:60px 0; font-size:14px; line-height:26px; color:#979392;}
+
+#bottom1 a {color:#979392; font-weight:600;}
+#bottom1 a:hover {color:#9c600e}
+	
+#bottom1 h3 {margin:0 0 20px; padding:0; font-size:20px; text-transform:uppercase; color:#9f9d9d}	
+#bottom1 ul {list-style:none outside; margin:0; padding:0;}
+
+
+/* = Footer Section 
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+#footer {background:#222222; padding:70px 0 100px; }
+#footer img{ width:auto; max-width:100%; height:auto; }
+#footer a{ color:#fff; }
+#footer a:hover { color:var(--flyhigh-green); }
+#footer .top-menu{ padding:27px 0 17px 0; margin:0 0 25px 0; border-bottom:4px solid #666666; }
+#footer .top-menu ul{ padding:0; margin:0; }
+#footer .top-menu ul li{ display:inline-block; font-size:20px; color:#fff; line-height:22px; font-weight:400; text-transform:uppercase; letter-spacing:.8px; padding:0 19px 5px; margin:0; }
+#footer .top-menu ul li:first-child{ padding-left:0; }
+#footer .top-menu ul li:last-child{ padding-right:0; }
+#footer .top-menu ul li:first-child a{ color:var(--flyhigh-green); cursor:default; }
+#footer p{ font-size:14px; color:#666666; line-height:16px; font-weight:400; padding:0; margin:0; }
+
+#footer .bottom-menu{ padding:0; margin:0; }
+#footer .bottom-menu ul{ padding:0; margin:0; }
+#footer .bottom-menu ul li{ display:inline-block; font-size:14px; color:#fff; line-height:16px; font-weight:400; padding:0 7px; margin:0; }
+#footer .bottom-menu ul li:first-child{ padding-left:0; }
+#footer .bottom-menu ul li:last-child{ padding-right:0; }
+
+@media screen and (max-width: 1279px) {
+	#footer .top-menu ul li{ padding:0 10px 5px; }
+}
+@media screen and (max-width: 1199px) {
+	#footer .top-menu ul li{ font-size:17px; line-height:19px; padding:0 8px 5px; }
+}
+@media screen and (max-width: 991px) {
+	#footer{ padding:40px 0 30px; }
+}
+
+
+
+/* = Back to top 
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+.backtotop.styled {	
+	position:fixed;bottom:20px;right:20px;width:55px;height:55px; 
+	color:#FFF;font-weight:bold; font-size:30px;line-height:50px;
+	display:none; text-align:center;background-color:#7aa72b; border:1px solid #7aa72b;
+	-webkit-border-radius: 15px;-moz-border-radius: 15px;border-radius: 15px; z-index:99999;
+	/* text-indent:-9999px;background: url('icon_top.png') no-repeat;*/		
+}
+
+
+/* = Forms 
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+/* Gravity Forms */
+
+.gform_wrapper .gform_heading,
+.gform_wrapper .top_label .gfield_label, .gform_wrapper label {display:none!important}
+
+.gform_wrapper .ginput_container input.form-control, 
+.gform_wrapper .ginput_complex .ginput_full input.form-control,
+.gform_wrapper .ginput_container textarea.form-control,
+.gform_wrapper .ginput_container select.form-control {
+	background:#e5e7e8;
+	width:100%!important;padding: 6px 12px!important;text-indent: 0!important;
+	border-radius:0 !important; border-width:0 !important;	
+}
+
+.gfield.disclaimer {font-size:12px; font-style:italic}
+.gform_wrapper .gform_footer { padding:0!important; text-align:right}
+.gform_footer input[type=submit] {/*width:100%;*/}
+
+/* Long contact form address */
+.gform_wrapper .ginput_complex .ginput_left, 
+.gform_wrapper .ginput_complex .ginput_right {
+	width:49%!important; min-height:1px!important;
+}
+
+.gform_wrapper div.ginput_container,
+.gform_wrapper .address_line_2, 
+.gform_wrapper .ginput_complex > span {margin-top:10px!important;}
+
+.gform_wrapper .address_line_2 {display:block}
+
+/* Double column layout for short contact */
+.gform2col .gform_wrapper .gfield { width:49.5% }
+.gform2col ul li {margin-bottom:0;}
+.gform2col .gform_wrapper .ginput_container input.form-control {height:50px;}
+.gform2col .gform_wrapper .textarea_wrapper { float:right; margin-top:-210px} 
+.gform2col .gform_wrapper .textarea_wrapper textarea {max-height:200px}
+.gform2col .gform_button {/* display:block!important;*/max-width:300px;  margin:0 auto; float:none}
+@media screen and (max-width: 640px) {
+	.gform2col .gform_wrapper .textarea_wrapper {margin-top:-228px;} 
+	.gform2col .gform_wrapper .textarea_wrapper textarea {max-height:218px}
+	.ie .gform2col .gform_wrapper .textarea_wrapper {margin-top:-210px;}
+	.ie .gform2col .gform_wrapper .textarea_wrapper textarea {max-height:200px}
+}
+@media (max-width: 560px) {	
+	.gform2col .gform_wrapper .gfield { width:100%}
+	.gform2col .gform_wrapper .textarea_wrapper { width:100%; margin-top:0;float:left }
+	.ie .gform2col .gform_wrapper .textarea_wrapper { width:100%; margin-top:0;float:left }	
+}
+
+
+/* = Blog Section 
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+.blog.home #main article,
+.blog #main article,
+.category #main article,
+.archive  #main article {
+	background:#FFF; border-radius:3px; border:1px solid #ccc; padding:30px
+}
+
+#archives-3 .screen-reader-text {display:none;}
+
+/* .blog #main #breadcrumbs {display: none;}
+.category #main #breadcrumbs {display: none;}
+.archive #main #breadcrumbs {display: none;} */
+
+.topheader.resultheader  {margin:0 0 10px; font-size:30px;}
+.result_data { display:block; list-style: none outside; padding:10px 0 0 ; clear:both;}
+.result_data li { display: inline; padding:0 10px 0 0; color:#888}
+.wp-post-image {float:left; margin:0 25px 0 0}
+.topheader.resultheader:hover {text-decoration:underline;}
+
+
+
+.pagination {display:block; float:left; width:100%; padding:10px 0;  margin-top:10px;text-align:left; line-height:45px}
+.pagination>*{ padding:8px; border:1px solid #ccc;  }
+.pagination .current {background:#dfdfdf}
+.pagination a[rel=prev] {float:left}	
+.pagination a[rel=next] {float:right}
+
+#searchform .screen-reader-text {display:none;}
+
+.main_aside .widgettitle {margin-bottom:15px; padding-bottom:0; margin-top:60px;}
+
+/* = Maps Google Map API & InfoWindow Styles
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+.mapcanvas {float:left; width:99%; height:500px; margin: 0 0 20px; border:0 double #ccc}
+.iwindow {line-height:18px;width:250px}
+.iwindow hr { border:0;margin:10px 0; background:0; border-top:1px solid #ddd; width:100%; clear:both }
+.iwindow a {font-size:12px}
+.iwindow.hasimg {width:350px}
+.iwindow.hasimg hr {float:left;}
+.hasimg.hasimg .infoimg {float:left;max-width:100px;margin:0 10px 0 0}
+
+.mapimg {display:block; height:100px; width:auto;}
+
+/* -- Directions form - active only on single locations -- */
+.directions_form {float:left;display:block;border:1px solid #ddd; width:100%}
+.directions_form>div {display:block;padding:10px; overflow:hidden}
+.directions_form .saddr{float:left; width:75%; padding:10px}
+.directions_form strong {display:block}
+.directions_form .dbtn {float:right; width:18%; border:0; padding:10px;}
+
+/* -- map_info styles/ Bubble -- */
+.map_info {clear:none!important;overflow:hidden; line-height:18px; float:left; cursor:pointer}
+.map_info {width:32%;margin:0 1% 10px 0}
+.map_info .org, .map_info .line1, .map_info .line2, .map_info .csz, .map_info .tel, .map_info .fax, .map_info .extra {display:block;}
+.map_info .full_address {display:block;padding-bottom:10px} 
+
+
+
+/* = Bootstrap overwrites
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+/* change the gutter widths to 25px. Essentially making them 50px in between columns  */ 
+.row {
+    margin-left: -25px;
+    margin-right: -25px;
+}
+.col-xs-25, .col-md-25, .col-lg-25,
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.container, .fwpadded  { padding-left:25px; padding-right:25px}
+
+
+/* Change the width of the container for med screens*/
+@media (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+}
+
+
+/* = Framework overwrites
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+[class*="qcol-"] { 
+    -webkit-column-gap: 50px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 50px; /* Firefox */
+    column-gap: 50px;	
+}
+
+	
+
+/* = Targeted Pages and Styles
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+/* Styling for Inside Pages */
+.inside hr.left 	
+{
+    border-top: 4px solid var(--flyhigh-green);
+    margin: 0 0 5px 0;
+    max-width: 25%;
+}	
+.inside H2 {margin-bottom:60px; margin-top:20px;}
+.inside H2 span {color:var(--flyhigh-green);}
+
+
+/* Party Packages */
+.row .packages{background:#F1F1F1; border:1px solid #999; border-radius:10px; margin:0 5px 60px 5px;}
+.row .packages h2 {color:var(--flyhigh-blue); margin-bottom:20px; padding-bottom:0;}
+.row .packages h5 {margin-top:0; padding-top:0; margin-bottom:5px; padding-bottom:0;}
+.row .packages h6 {margin:0 0 10px 0; padding:0;}
+.row .packages ul.expand {margin-top:20px;}
+
+
+
+
+
+/* Video Gallery Page */
+.tubepress-meta-description {font-size:16px; line-height:26px;}
+
+
+
+/* INSIDE PAGE LAYOUT */
+.topics {margin-bottom:80px;}
+.topics hr.left {
+    border-top: 4px solid var(--flyhigh-green);
+    margin: 0 0 15px 0;
+    max-width: 50%;
+}
+
+.topics h2 {color:var(--flyhigh-blue); margin:10px 0;}
+.topics h3 {font-size:32px; margin:0 0 20px 0; text-transform:none;}
+
+.topics h4 { margin:0 0 20px 0; text-transform:none;}
+.topics h5 { margin:0 0 20px 0; padding:0; text-transform:none;}
+.topics h6 { margin:0 0 10px 0; font-size: 22px;}
+
+.topics p+ul {margin-top:-40px;}
+.topics li.upper {text-transform:uppercase;}
+
+
+/*.topics h2 {margin:0 0 20px 0; padding:0; color:#fff!important; background:#2d4863; padding:10px;}*/
+
+.topics h2.centered {text-align:center; margin-bottom:20px;}
+.topics.full-width {background:#cccccc; padding:20px;}
+
+
+.topics p+ul {margin-top:-20px;}
+
+
+
+.call-out-box {background:#2D4863; font-style:italic; text-align:center; padding:20px; margin-top:0; color:#fff; font-size:18px;}
+.call-out-box a {}
+
+.giving .btn.btnc {width:100%;}
+.pt-info .btn.btnc {width:100%;}
+
+
+@media screen and (max-width: 1200px) {
+.topics h2 {font-size:22px;}
+.topics h2.long {font-size:16px;}
+.topics img.alignnone {margin-bottom:20px!important;}
+}
+
+@media screen and (max-width: 768px) {
+.topics h2 {font-size:20px;}
+.topics {margin-bottom:30px;}
+}
+
+
+
+
+/* = Inside Pages Top Graphics
+-------------------------------------------------------------------------------------------------------------------- 
+** Advice Media ** */
+
+
+#inside-top-graphic-default img {width:100%;}
+
+
+/* Fly High custom CSS
+ * -------------------------------------------
+ * ** Heather ** */
+
+.rates-header {
+	text-align:center;
+  color:var(--flyhigh-green);
+	font-weight:600;
+}
+ul.ratesList {
+  list-style-type: circle;
+}
+ul.ratesListAttractions {
+list-style-image:url('https://ogden.flyhightrampolinepark.com/wp-content/uploads/sites/5/2019/03/flyhigh-bullet2.jpg');
+	padding-left:25px;
+}
+h4.experience {
+  margin:0;
+	padding:0;
+}
+h5.orange-header {
+	color:orange;
+}
+h2.age-header {
+	color:#000;
+	text-decoration:underline;
+}
+h2.rates {
+	font-size: 4em;
+	color:var(--flyhigh-blue);
+	padding-top:5px;
+}
+.price {
+	color:var(--flyhigh-blue);
+	overflow: hidden;
+}
+
+h2.price { 
+	color:var(--flyhigh-blue);
+	float: left;
+	font-size: 4em;
+	padding-right: 20px;
+	padding-top:18px;
+	padding-bottom: 8px;
+}
+.best-value {
+	color:var(--flyhigh-green);
+	font-size:18px;
+	line-height: 1.3;
+	font-weight:800;
+	padding-top:20px;
+}
+.special {
+  font-family: Oswald;
+	font-weight:normal;
+ }
+.specials-banner {
+	font-weight:500;
+	color:#fff;
+	text-align: center;
+	font-size:28px;
+}
+.blue-banner {
+	background-color: var(--flyhigh-blue);
+}
+.blue-banner-round-top {
+	background-color: var(--flyhigh-blue);
+	border-radius: 5px 5px 0px 0px;
+}
+.green-banner {
+	background-color: var(--flyhigh-green);
+}
+.green-banner-round-top {
+	background-color: var(--flyhigh-green);
+	border-radius: 5px 5px 0px 0px;
+}
+.orange-banner {
+	background-color: orange;
+}
+.orange-banner-round-top {
+	background-color: orange;
+	border-radius: 5px 5px 0px 0px;
+}
+.black-banner {
+	background-color: #000;
+}
+.specials-text {
+	font-weight:500;
+	color:#000;
+	font-size:24px;
+	text-align: center;
+}
+.upper {
+	text-transform: uppercase;
+}
+.other-specials-banner {
+	font-weight:500;
+	color:#fff;
+	text-align: center;
+	font-size:16px;
+}
+.other-specials-text {
+	font-weight:500;
+	color:#000;
+	font-size:16px;
+	text-align: center;
+}
+.blue-box-round {
+	border: 2px solid var(--flyhigh-blue);
+  border-radius: 10px; 
+}
+.green-box-round {
+	border: 2px solid var(--flyhigh-green);
+  border-radius: 10px; 
+}
+.orange-box-round {
+	border: 2px solid orange;
+  border-radius: 10px; 
+}
